@@ -29,4 +29,4 @@ class SingleState extends Equatable {
       ];
 }
 
-enum StatusText { loading, succes,pure, error }
+enum StatusText { loading, succes, pure, error }

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nt_fifth_exam/data/api/api_service.dart';
 import 'package:nt_fifth_exam/data/repository/satellites_repository.dart';
-import 'package:nt_fifth_exam/state_managments/cubit/customer_satellites/customer_statellites_cubit.dart';
-import 'package:nt_fifth_exam/state_managments/cubit/customer_satellites/customer_statellites_state.dart';
+import 'package:nt_fifth_exam/state_managments/cubits/customer_satellites/customer_statellites_cubit.dart';
+import 'package:nt_fifth_exam/state_managments/cubits/customer_satellites/customer_statellites_state.dart';
 
 class BScreen extends StatelessWidget {
   const BScreen({super.key});

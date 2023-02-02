@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nt_fifth_exam/state_managments/cubit/single_state_cubit/single_state_cubit.dart';
-import 'package:nt_fifth_exam/state_managments/cubit/single_state_cubit/single_state_state.dart';
+import 'package:nt_fifth_exam/state_managments/cubits/single_state_cubit/single_state_cubit.dart';
+import 'package:nt_fifth_exam/state_managments/cubits/single_state_cubit/single_state_state.dart';
 
 class AScreen extends StatelessWidget {
   const AScreen({super.key});
@@ -19,7 +19,8 @@ class AScreen extends StatelessWidget {
           return const Center(
             child: CircularProgressIndicator(),
           );
-        } else if (state.statusText == StatusText.succes) {
+        }
+        if (state.statusText == StatusText.succes) {
           return ListView(
             physics: const BouncingScrollPhysics(),
             children: List.generate(
@@ -44,7 +45,8 @@ class AScreen extends StatelessWidget {
             ),
           );
         }
-        return const SizedBox();
+        return const SizedBox(
+        );
       }),
     );
   }
