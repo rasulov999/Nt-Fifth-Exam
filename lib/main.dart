@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nt_fifth_exam/state_managments/cubit/single_state_cubit/single_state_cubit.dart';
 import 'package:nt_fifth_exam/state_managments/cubit/tab_cubit/tab_cubit.dart';
 import 'package:nt_fifth_exam/views/screens/tab_box/tab_box/tab_box.dart';
 
@@ -13,6 +14,7 @@ void main() {
   );
   runApp(MultiBlocProvider(providers: [
     BlocProvider(create: (context) => TabCubit()),
+    BlocProvider(create: (context) => SingleStateCubit())
   ], child: const MyApp()));
 }
 

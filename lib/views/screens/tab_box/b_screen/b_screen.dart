@@ -39,16 +39,18 @@ class BScreen extends StatelessWidget {
             );
           } else if (state is LoadDataInSucces) {
             return ListView(
-                physics: const BouncingScrollPhysics(),
-                children: List.generate(
-                    state.model.length,
-                    (index) => Card(
-                          child: ListTile(
-                            title: Text(state.model[index].country),
-                            subtitle: Text(state.model[index].launcher),
-                            trailing: Text(state.model[index].launchTime),
-                          ),
-                        )));
+              physics: const BouncingScrollPhysics(),
+              children: List.generate(
+                state.model.length,
+                (index) => Card(
+                  child: ListTile(
+                    title: Text(state.model[index].country),
+                    subtitle: Text(state.model[index].launcher),
+                    trailing: Text(state.model[index].launchTime),
+                  ),
+                ),
+              ),
+            );
           } else if (state is LoadDataInFailure) {
             return Center(
               child: Text(

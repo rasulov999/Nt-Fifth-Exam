@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nt_fifth_exam/state_managments/cubit/single_state_cubit/single_state_cubit.dart';
+import 'package:nt_fifth_exam/state_managments/cubit/single_state_cubit/single_state_state.dart';
 
 class AScreen extends StatelessWidget {
   const AScreen({super.key});
@@ -12,6 +13,39 @@ class AScreen extends StatelessWidget {
         title: const Text("A Screen"),
         centerTitle: true,
       ),
+      body:
+          BlocBuilder<SingleStateCubit, SingleState>(builder: (context, state) {
+        if (state.statusText == StatusText.loading) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        } else if (state.statusText == StatusText.succes) {
+          return ListView(
+            physics: const BouncingScrollPhysics(),
+            children: List.generate(
+              state.model.length,
+              (index) => Card(
+                child: ListTile(
+                  title: Text(state.model[index].country),
+                  subtitle: Text(state.model[index].launcher),
+                  trailing: Text(state.model[index].id),
+                ),
+              ),
+            ),
+          );
+        } else if (state.errorText == StatusText.error) {
+          return Center(
+            child: Text(
+              state.errorText,
+              style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black),
+            ),
+          );
+        }
+        return const SizedBox();
+      }),
     );
   }
 }

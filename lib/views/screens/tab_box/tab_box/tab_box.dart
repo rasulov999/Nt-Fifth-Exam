@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nt_fifth_exam/state_managments/cubit/tab_cubit/tab_cubit.dart';
 import 'package:nt_fifth_exam/views/screens/tab_box/a_screen/a_screen.dart';
@@ -20,9 +19,10 @@ class _TabBoxState extends State<TabBox> {
   void initState() {
     screens = [
       AScreen(),
-     BScreen(),
-     CScreen(),
-     DScreen()    ];
+      BScreen(),
+      CScreen(),
+      DScreen(),
+    ];
     super.initState();
   }
 
