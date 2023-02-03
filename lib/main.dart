@@ -7,12 +7,11 @@ import 'package:nt_fifth_exam/data/sql/storage/storage.dart';
 import 'package:nt_fifth_exam/state_managments/cubits/connectivity/connectivity_cubit.dart';
 import 'package:nt_fifth_exam/state_managments/cubits/single_state_cubit/single_state_cubit.dart';
 import 'package:nt_fifth_exam/state_managments/cubits/tab_cubit/tab_cubit.dart';
-import 'package:nt_fifth_exam/utils/my_utils.dart';
 import 'package:nt_fifth_exam/views/screens/tab_box/tab_box/tab_box.dart';
 
-void main()  {
- 
-
+void main() async {
+  await StorageRepository.getInstance();
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarIconBrightness: Brightness.dark,
